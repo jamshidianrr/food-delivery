@@ -1,0 +1,1099 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: poppins;
+}
+
+ul {
+    list-style: none;
+    /* برای پنهان شدن گلوله کنار ان هست  */
+}
+
+a {
+    text-decoration: none;
+}
+
+
+@font-face {
+    font-family: poppins;
+    font-style: normal;
+    font-weight: 900;
+    src: url("../fonts/poppins/poppins-bold-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: poppins;
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/poppins/poppins-bold-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: poppins;
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/poppins/poppins-medium-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: poppins;
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/poppins/poppins-semibold-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: poppins;
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/poppins/poppins-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: poppins;
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/poppins/poppins-light-webfont.woff") format("woff");
+}
+
+img {
+    width: 100%;
+}
+
+:root {
+    --color-C90000: #C90000;
+    --color-7D7C7C: #7D7C7C;
+    --color-504F4F: #504F4F;
+    --color-FFC300: #FFC300;
+    --color-323232: #323232;
+    --color-FFF6A3: #FFF6A3;
+    --color-F1F1F166: #F1F1F166;
+    --color-E3E3E3: #E3E3E3;
+    --color-FFFDE6: #FFFDE6;
+}
+
+.main-header {
+    margin-top: 1rem;
+}
+
+.container-site {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.navgation {
+    display: grid;
+    grid-template-columns: 58px 565px 187px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navgation ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2.5rem;
+
+}
+
+.navgation ul li:not(:first-child) a {
+    color: var(--color-7D7C7C);
+    font-weight: 500;
+    /* میگیم همه باشه جز اون اولی که میخوایم قرمز باشه  */
+}
+
+.navgation ul li:first-child a {
+    color: var(--color-C90000);
+    font-weight: 600;
+
+}
+
+.link-navgation a {
+    border: 1px solid var(--color-C90000);
+    padding: 9px 16px;
+    font-size: 16px;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+
+.link-navgation a:first-child {
+    color: var(--color-C90000);
+    font-weight: 400;
+}
+
+.link-navgation a:last-child {
+    background-color: var(--color-C90000);
+    color: #fff;
+    font-weight: 500;
+}
+
+#close-icon {
+    display: none;
+    color: var(--color-504F4F);
+}
+
+.nav-menu-sidbar {
+    /*کدهایاینقسمتمربوطبهوقتیرویایکونمیزنیمکهمنوبازشودهستولیچونجاوانخوندمازسیاساسمیریم*/
+    flex-direction: column;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    background-color: #fff;
+    height: 100%;
+    top: 0;
+    padding: 1rem;
+    width: 200px;
+    border-right: 2px solid var(--color-504F4F);
+    transform: translateX(-384px);
+    /* برای وقتی این کد و میزنی خیلی اروم بیاد بیرون اون منو  */
+    transition: all 250ms ease-out;
+}
+
+#input-menu:checked+label+ul {
+    transform: translateX(0);
+}
+
+#input-menu:checked+label svg:first-child {
+    display: none;
+}
+
+#input-menu:checked+label #close-icon {
+    display: block;
+}
+
+/* قسمت دوم هدر هست  */
+.header-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.content-left-header-bottom {
+    align-self: center;
+    width: 86%;
+}
+
+.content-left-header-bottom h1 {
+    color: var(--color-C90000);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 76px;
+}
+
+.content-left-header-bottom p {
+    color: var(--color-504F4F);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    max-width: 77%;
+}
+
+.order-food {
+    margin-top: 3rem;
+}
+
+.text-price-order-food {
+    color: var(--color-323232);
+    margin-bottom: 1rem;
+}
+
+.text-price-order-food span:first-child {
+    font-size: 16px;
+    font-weight: 300px;
+}
+
+.text-price-order-food span:last-child {
+    font-size: 24px;
+    font-weight: 500px;
+}
+
+.action-order {
+    display: flex;
+    justify-content: space-between;
+    max-width: 79%;
+}
+
+.buttom-action-order {
+    border: 1px solid rgba(241, 241, 241, 0.70);
+    background-color: #fff;
+    border-radius: 100px;
+    padding: 8px 16px;
+    box-shadow: 0 10px 17px 0 rgb(112, 144, 176, 0.20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 41%;
+    gap: 12px;
+}
+
+.buttom-action-order button {
+    background-color: transparent;
+    border: none;
+}
+
+.buttom-action-order span {
+    color: var(--color-FFC300);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.buttom-action-order span::after,
+.buttom-action-order span::before {
+    display: inline-block;
+    width: 1px;
+    height: 22px;
+    background-color: rgba(241, 241, 241, 0.70);
+    margin-left: 12px;
+}
+
+.buttom-action-order span::after {
+    margin-left: 12px;
+}
+
+.buttom-action-order span::before {
+    margin-right: 12px;
+}
+
+.action-order>button {
+    background-color: #FFC300;
+    box-shadow: 0 20px 20px 0 rgba(241, 241, 241, 0.70);
+    border-radius: 100px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-323232);
+    font-size: 20px;
+    font-weight: 600;
+    font-family: poppins;
+}
+
+.action-order>button svg {
+    margin-right: 5px;
+    margin-top: -3px;
+}
+
+.content-right-header-bottom {
+    position: relative;
+}
+
+.fixed-box-delivery {
+    position: absolute;
+    top: 5rem;
+    left: -6rem;
+    border-radius: 50px 50px 0 50px;
+    border: 1px solid var(--color-F1F1F166);
+    background-color: rgba(241, 241, 241, 0.40);
+    padding: 12px;
+    text-align: center;
+}
+
+.fixed-box-delivery div {
+    display: flex;
+    align-items: center;
+}
+
+.fixed-box-delivery>span {
+    color: var(--color-7D7C7C);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.fixed-box-delivery div span {
+    color: var(--color-323232);
+    font-size: 24px;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+/* برای قسمت هدر سایت هست  */
+.row-title-section-food h4 {
+    color: var(--color-C90000);
+    font-size: 48px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    width: max-content;
+}
+
+.line-bottom-row-title {
+    width: 100%;
+    height: 9px;
+    background-color: var(--color-FFF6A3);
+    position: absolute;
+    z-index: -1;
+    top: 35px;
+}
+
+.row-button-category {
+    display: grid;
+    grid-auto-columns: 178px;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    column-gap: 20px;
+    margin-top: 32px;
+}
+
+.row-button-category button {
+    border-radius: 100px;
+    border: 1px solid var(--color-E3E3E3);
+    background-color: var(--color-F1F1F166);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-504F4F);
+    font-size: 16px;
+    font-weight: 400;
+    column-gap: 8px;
+}
+
+.button-active-category {
+    background-color: var(--color-FFC300) !important;
+    color: var(--color-323232) !important;
+    font-weight: 600 !important;
+}
+
+/* قسمت عکس های هدر هست  */
+.row-grid-food-products {
+    margin-top: 32px;
+    display: grid;
+    /* اینجوری نوشتم که نیاز به ریسپانسیو نباشه اخرش اگه خواستی اون جای مدیا ها اون هایی که کاور کردم برای این هست  */
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.item-food-grid {
+    border: 1px solid var(--color-C90000);
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+}
+
+.Badge-discount {
+    width: 48px;
+    position: absolute;
+}
+
+.img-item-food-grid {
+    position: relative;
+    text-align: center;
+}
+
+.img-item-food-grid img {
+    max-width: 227px;
+    max-height: 170px;
+    object-fit: contain;
+
+}
+
+.img-item-food-grid div {
+    height: 105px;
+    background-color: var(--color-FFFDE6);
+    border-radius: 12px;
+    position: absolute;
+    width: 100%;
+    bottom: -2px;
+    z-index: -1;
+}
+
+.info-item-food-grid {
+    margin-top: 18px;
+}
+
+.info-item-food-grid h5 {
+    font-size: 20px;
+    color: var(--color-323232);
+    font-weight: 600;
+}
+
+.info-item-food-grid p {
+    font-size: 14px;
+    color: var(--color-504F4F);
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.score-item-food-grid {
+    margin: 12px 0 20px 0;
+}
+
+.bottom-item-food-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom-item-food-grid span {
+    color: var(--color-323232);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.bottom-item-food-grid button {
+    background-color: var(--color-C90000);
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+}
+
+/* برای قسمت بعدی هسا  */
+.see-all-food {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.see-all-food a {
+    color: var(--color-504F4F);
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.section-off {
+    margin-top: 10rem;
+}
+
+.section-off .row-title-section-food {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-foods-off {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 30px;
+    margin-top: 1.8rem;
+}
+
+.item-food-off {
+    border: 1px solid var(--color-E3E3E3);
+    background-color: var(--color-F1F1F166);
+    border-radius: 20px;
+    padding: 2rem 0 2rem 1.2rem;
+    overflow: hidden;
+    transition: all 250ms ease-in;
+    cursor: pointer;
+}
+
+.item-food-off:hover {
+    background-color: var(--color-C90000);
+    transform: scale(1.1);
+}
+
+.item-food-off:hover .left-item-food-off h6 {
+    color: var(--color-FFC300);
+}
+
+.item-food-off:hover .left-item-food-off p {
+    color: #fff;
+}
+
+.item-food-off:hover .title-sm-item-food-off span:first-child {
+    color: #fff;
+}
+
+.item-food-off:hover .left-item-food-off button {
+    color: var(--color-323232);
+    background-color: #fff;
+}
+
+.item-food-off:hover .left-item-food-off svg path {
+    fill: var(--color-323232);
+}
+
+.item-food-off:hover .price-off del {
+    color: #fff;
+}
+
+.item-food-off:hover .price-off span {
+    color: var(--color-FFC300);
+}
+
+
+
+
+.row-info-food-off {
+    display: flex;
+}
+
+.title-sm-item-food-off {
+    display: flex;
+    align-items: center;
+    column-gap: 11px;
+}
+
+.title-sm-item-food-off span:last-child {
+    display: inline-block;
+    width: 75%;
+    background-color: var(--color-7D7C7C);
+    height: 1px;
+}
+
+.title-sm-item-food-off span:first-child {
+    color: var(--color-323232);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.left-item-food-off {
+    width: 95%;
+}
+
+.left-item-food-off h6 {
+    color: var(--color-C90000);
+    font-size: 27px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0.9rem 0;
+    white-space: nowrap;
+    transition: all 250ms ease-in;
+}
+
+.left-item-food-off p {
+    color: var(--color-504F4F);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    height: 44px;
+    transition: all 250ms ease-in;
+}
+
+.right-item-food-off img {
+    right: 30%;
+    position: relative;
+    top: 23%;
+    max-width: 273px;
+    max-height: 204px;
+    width: 273px;
+}
+
+.price-off del {
+    color: var(--color-7D7C7C);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.price-off span {
+    color: var(--color-C90000);
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.left-item-food-off button {
+    background-color: var(--color-504F4F);
+    border-radius: 20px;
+    color: #F1F1F1;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: poppins;
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+    padding: 8px 12px;
+    border: none;
+    margin-top: 4.5rem;
+    transition: all 250ms ease-in;
+}
+
+.left-item-food-off button span {
+    height: 24px;
+    line-height: 27px;
+}
+
+.seconde-item-food-off .right-item-food-off img {
+    right: 55%;
+}
+
+/* برای قسمت بعدی هست موبایل و این ها  */
+
+.section-mobile-app {
+    display: grid;
+    grid-template-columns: 35% 60%;
+    justify-content: flex-end;
+    border: 1px solid var(--color-E3E3E3);
+    background-color: var(--color-F1F1F166);
+    border-radius: 0 500px 500px 0;
+    max-width: 90%;
+    margin-top: 10rem;
+
+}
+
+.download-btn-app a {
+    display: inline-block;
+    width: 14%;
+    margin-top: 32px;
+}
+
+.download-btn-app a:last-child {
+    margin-left: 20px;
+}
+
+.content-section-mobile-app {
+    padding: 2rem;
+    justify-self: center;
+    align-self: center;
+}
+
+.img-section-mobile-app img {
+    transform: scale(1.2);
+    position: relative;
+    top: -25px;
+    height: 100%;
+    object-fit: cover;
+    max-width: 400px;
+}
+
+.content-section-mobile-app h6 {
+    color: var(--color-7D7C7C);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content-section-mobile-app h4 {
+    color: var(--color-C90000);
+    font-size: 48px;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.content-section-mobile-app p {
+    color: var(--color-323232);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    max-width: 77%;
+}
+
+/* برای  قسمت بعدی سایت هست اون مشکی  */
+.section-search-location img {
+    max-width: 187px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.content-search-location {
+    background-color: var(--color-323232);
+    border-radius: 20px;
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    height: 398px;
+}
+
+.content-search-location h6 {
+    color: var(--color-FFFDE6);
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.content-search-location p {
+    color: var(--color-F1F1F166);
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0.5rem 0 4rem 0;
+}
+
+.content-search-location form {
+    background-color: var(--color-FFC300);
+    border-radius: 100px;
+    padding: 0 10px;
+    height: 56px;
+    width: 45%;
+    position: relative;
+}
+
+.content-search-location form input {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+}
+
+.content-search-location form input::placeholder {
+    color: var(--color-504F4F);
+    font-family: poppins;
+}
+
+.content-search-location form button {
+    position: absolute;
+    right: 13px;
+    top: 15%;
+    background-color: #fff;
+    border-radius: 100px;
+    padding: 12px 24px;
+    border: none;
+}
+
+.content-search-location img:nth-child(4) {
+    top: 18%;
+    left: 0;
+}
+
+.content-search-location img:last-child {
+    bottom: 0;
+    left: 10%;
+}
+/* برای قسمت فوتر سایت هست  */
+footer{
+    background-color: var(--color-FFFDE6);
+    padding: 32px 0;
+    margin-top: 5rem ;
+}
+.grid-section-footer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr );
+}
+.logo-footer{
+    display: flex;
+    align-items: center;
+    gap: 15px ;
+}
+.logo-footer img{
+    max-width: 70px ;
+}
+.logo-footer h6{
+    color: var(--color-323232);
+    font-size: 32px;
+    font-weight: 600;
+    white-space: nowrap ;
+}
+.info-site-footer{
+    align-self: center;
+}
+.info-site-footer ul{
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-left: 4rem;
+    margin-top: 1rem ;
+}
+.link-footer h5{ 
+    color: var(--color-323232);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 36px ;
+    margin-bottom: 32px ;
+}
+.link-footer ul li {
+    color: var(--color-323232);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 36px ;
+}
+.link-footer ul li  a{
+    color: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1042px) {
+    .action-order {
+        max-width: 100%;
+    }
+
+    /* برتی قسمت پایین همون سیاه هست  */
+    .content-search-location img {
+        max-width: 105px;
+    }
+
+}
+
+@media (max-width:999px) {
+    .img-section-mobile-app {
+        grid-row: 2;
+        grid-column: 1 span;
+        margin-top: 4rem;
+    }
+
+    .img-section-mobile-app img {
+        top: -17px;
+    }
+
+    .content-section-mobile-app {
+        grid-column: 2 span;
+    }
+
+    .content-section-mobile-app h4 {
+        font-size: 33px;
+    }
+
+    .content-section-mobile-app p {
+        font-size: 15px;
+    }
+
+    /* برای قسمت سیاه پایین صفحه هست  */
+    .content-search-location h6 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width:882px) {
+    .header-bottom {
+        margin-top: 2rem;
+    }
+
+    .fixed-box-delivery {
+        top: -1rem;
+        left: -10rem;
+    }
+
+}
+
+@media (max-width:834px) {
+    .navgation {
+        grid-template-columns: repeat(3, auto);
+        /* برای اینکه از کیفیت کم نشه وقتی کوچیک میکنه هست  */
+    }
+    .section-food{
+        margin-top: 4rem ;
+    }
+
+    .navgation>ul {
+        display: none;
+    }
+
+    .link-navgation {
+        justify-self: center;
+    }
+
+    .menu-icon {
+        justify-self: flex-end;
+    }
+
+    .content-left-header-bottom h1 {
+        font-size: 34px;
+        line-height: 50px;
+    }
+
+    .order-food {
+        margin-top: 2rem;
+    }
+
+    .buttom-action-order {
+        gap: 2px;
+        padding: 5px 10px;
+        max-width: 45%;
+    }
+
+    .action-order>button {
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    .action-order {
+        justify-content: flex-start;
+        gap: 1.5rem;
+    }
+
+    .fixed-box-delivery {
+        padding: 6px;
+        top: -1rem;
+        left: -5rem;
+    }
+
+    .fixed-box-delivery div span {
+        font-size: 19px;
+    }
+
+    /* برای قسمت ریسپاسنسیو عکس هی هدرم هست  */
+    /* .row-grid-food-products{
+        grid-template-columns: repeat(2,1fr);
+    } */
+
+    /* برای قسمت سیاه پایین صفحه هست  */
+    .content-search-location img {
+        max-width: 74px;
+    }
+
+    .content-search-location form {
+        width: 93%;
+    }
+    /* برای قسمت فوتر هست  */
+    .info-site-footer{
+        grid-row: 2;
+        grid-column: 2 span ;
+        justify-self: center;
+        margin-top: 2rem ;
+    }
+    .grid-section-footer{
+        grid-template-columns: 2,1fr ;
+    }
+    .grid-section-footer .link-footer:nth-child(2){
+        justify-self: center;
+    }
+
+}
+
+@media (min-width:835px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media (max-width:676px) {
+    .header-bottom {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .content-left-header-bottom {
+        width: 100%;
+        text-align: center;
+    }
+
+    .content-left-header-bottom p {
+        max-width: 100%;
+    }
+
+    .order-food-desktop {
+        display: none;
+    }
+
+    .order-food-mobile {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fixed-box-delivery {
+        position: sticky;
+        width: 30%;
+    }
+
+    .action-order>button {
+        padding: 9px;
+    }
+
+    .action-order>button svg {
+        font-size: 19px;
+        margin-top: -2px;
+    }
+
+    /* برای قسمت موبایل هست  */
+
+    .section-mobile-app {
+        border-radius: 500px 500px 0 0;
+        max-width: 100%;
+    }
+
+    .content-section-mobile-app {
+        margin-top: 6rem;
+        text-align: center;
+    }
+
+    .content-section-mobile-app p {
+        max-width: 100%;
+    }
+
+    .img-section-mobile-app {
+        grid-column: 2 span;
+        justify-self: center;
+    }
+
+    .img-section-mobile-app img {
+        max-width: 200px;
+        top: -13px;
+    }
+
+    /* برای قسمت سیاه پایین هست  */
+    .content-search-location h6 {
+        font-size: 25px;
+    }
+
+    .content-search-location p {
+        font-size: 13px;
+    }
+
+
+}
+
+@media (min-width:677px) {
+    .order-food-mobile {
+        display: none;
+    }
+}
+
+@media (min-width:550px) {
+    .section-search-location {
+        text-align: center;
+    }
+
+    .section-search-location img:nth-child(4) {
+        top: 7%;
+    }
+
+    .content-search-location form {
+        height: 49px;
+    }
+
+    .content-search-location form input {
+        font-size: 13px;
+    }
+
+    .content-search-location form button {
+        top: 11%;
+    }
+}
+
+@media (max-width:500px) {
+    /* برای هدر سایت هست قسمت عکس ها  */
+    /* .row-grid-food-products{
+        grid-template-columns: repeat(1,100%);
+    }  */
+}
